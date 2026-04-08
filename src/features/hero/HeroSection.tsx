@@ -29,7 +29,7 @@ export function HeroSection() {
 
           <StaggerItem>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-6 max-w-5xl mx-auto">
-              Hi, I'm{" "}
+              Hello, I'm{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
                 Goutham Gatla
               </span>.
