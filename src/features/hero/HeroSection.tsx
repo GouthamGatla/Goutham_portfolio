@@ -67,7 +67,7 @@ export function HeroSection() {
             rotate: [0, 5, 0],
           }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute hidden lg:block right-[15%] top-[0%] w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-white/10 backdrop-blur-xl"
+          className="absolute hidden lg:block right-[5%] top-[0%] w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-white/10 backdrop-blur-xl"
         />
         <motion.div
           animate={{
@@ -75,7 +75,7 @@ export function HeroSection() {
             rotate: [0, -10, 0],
           }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute hidden lg:block left-[15%] bottom-[20%] w-32 h-32 rounded-full bg-gradient-to-br from-pink-500/20 to-orange-500/20 border border-white/10 backdrop-blur-xl"
+          className="absolute hidden lg:block left-[10%] bottom-[20%] w-32 h-32 rounded-full bg-gradient-to-br from-pink-500/20 to-orange-500/20 border border-white/10 backdrop-blur-xl"
         />
       </div>
     </section>
