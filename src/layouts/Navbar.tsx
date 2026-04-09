@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/shared/components/ui/Button";
 
 const NAV_LINKS = [
-  { name: "Experience", href: "/#experience" },
-  { name: "Projects", href: "/#projects" },
-  { name: "Skills", href: "/#skills" },
-  { name: "Contact", href: "/#contact" }
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skills" },
+  { name: "Contact", href: "#contact" }
 ];
 
 export function Navbar() {
@@ -23,6 +23,22 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setMobileMenuOpen(false);
+    
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const element = document.getElementById(targetId);
+      if (element) {
+        // Add a small delay to handle transitions and ensure smooth interaction
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 10);
+      }
+    }
+  };
 
   return (
     <header
@@ -50,6 +66,7 @@ export function Navbar() {
                 <a
                   href={link.href}
                   className="hover:text-foreground transition-colors interactive"
+                  onClick={(e) => handleNavLinkClick(e, link.href)}
                 >
                   {link.name}
                 </a>
@@ -64,7 +81,7 @@ export function Navbar() {
               <Briefcase className="w-5 h-5" />
             </a>
             <Button variant="premium" size="sm" className="ml-2 interactive" asChild>
-              <a href="/#contact">Let's Talk</a>
+              <a href="#contact" onClick={(e) => handleNavLinkClick(e, "#contact")}>Let's Talk</a>
             </Button>
           </div>
         </nav>
@@ -93,13 +110,13 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   className="text-lg font-medium text-foreground py-2 border-b border-white/5"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleNavLinkClick(e, link.href)}
                 >
                   {link.name}
                 </a>
               ))}
               <Button variant="premium" className="mt-4 interactive w-full" asChild>
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Let's Talk</a>
+                <a href="#contact" onClick={(e) => handleNavLinkClick(e, "#contact")}>Let's Talk</a>
               </Button>
             </div>
           </motion.div>

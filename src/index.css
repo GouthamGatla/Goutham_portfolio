@@ -76,6 +76,10 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+
+  section {
+    scroll-margin-top: 6rem;
+  }
   
   /* Hide scrollbar for clean look */
   ::-webkit-scrollbar {

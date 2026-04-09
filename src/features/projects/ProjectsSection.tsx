@@ -18,18 +18,18 @@ const PROJECTS = [
     fullDesc: "Built the organization's core application handling crop insurance. Integrated Google Maps API to geo-tag farmland—a mission-critical capability for underwriting. Structured robust photo, video, and document capture for evidence submission. Applied Modular React Architecture and RTK for scalable backend communication.",
     impact: "Served as the primary growth engine for the organization, processing vital farmer enrollments securely via Keycloak.",
     tech: ["React Native", "Google Maps API", "Redux Toolkit", "Keycloak"],
-    demo: "https://demo.com",
+    demo: "https://play.google.com/store/apps/details?id=app.iagri&pcampaignid=web_share",
     image: kshemaImg
   },
   {
     id: 2,
-    title: "Field Survey Application",
+    title: "Field Survey / Crop Watch Application",
     category: "Offline-First",
     shortDesc: "Cross-platform mobile app empowering surveyors in rural areas with low/no connectivity.",
     fullDesc: "Designed an offline-first mobile and cross-platform web application for field agents. Utilized Realm DB for local persistence and background sync, enabling uninterrupted data collection in deep rural environments. Implemented Keycloak with PKCE flows for enterprise-grade authentication.",
     impact: "Achieved a 7× increase in farm photo review efficiency, drastically accelerating claims validation and scaling smoothly.",
     tech: ["React", "Realm DB", "Tailwind CSS", "Offline Sync"],
-    demo: "https://demo.com",
+    demo: "https://play.google.com/store/apps/details?id=com.kshema.cropwatch&pcampaignid=web_share",
     image: fieldScanImg
   },
   {
@@ -40,7 +40,7 @@ const PROJECTS = [
     fullDesc: "Spearheaded the development of critical internal operation modules including training platforms, field agent survey management tools, and ABHA integrations. Championed design consistency by partnering with designers to build reusable UI patterns, tokens, and Storybook component libraries.",
     impact: "Significantly streamlined operations and elevated team development capability with reusable component structures across multiple internal dashboards.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Storybook"],
-    demo: "https://demo.com",
+    demo: null,
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop"
   }
 ];
@@ -184,13 +184,13 @@ export function ProjectsSection() {
                         </div>
                       </div>
 
-                      <div className="space-y-3 pt-4 border-t border-white/10">
+                      {selectedProject.demo && <div className="space-y-3 pt-4 border-t border-white/10">
                         <Button className="w-full interactive flex gap-2" variant="premium" asChild>
                           <a href={selectedProject.demo} target="_blank" rel="noreferrer">
                             <ExternalLink className="w-4 h-4" /> Live Demo
                           </a>
                         </Button>
-                      </div>
+                      </div>}
                     </div>
                   </div>
                 </div>
